@@ -5,37 +5,55 @@ import Basket from "../../assets/Basket.jpeg";
 
 const Values = () => {
 
-   const leftValues = value.map(item=>{
+   const leftValues = value.slice(0,2).map(item => {
       return(
-         <div>
+         <div className='flex md:flex-row-reverse items-center gap-7 mt-2' key={item.id}>
             <div>
-               <span>{item.icon}</span>
+               <span className='flex justify-center items-center text-3xl text-white bg-gradient-to-b from-orange-400 to-orange-500 w-15 h-15 rounded-full'>{item.icon}</span>
             </div>
 
-            <div>
-               <h3>{item.title}</h3>
-               <p>{item.para}</p>
+            <div className='md:text-right'>
+               <h3 className='text-zinc-800 text-3xl font-bold'>{item.title}</h3>
+               <p className='text-zinc-600'>{item.para}</p>
             </div>
          </div>
       )
    })
+
+   const rightValues = value.slice(2).map(item => {
+      return(
+         <div className='flex items gap-7 mt-4 ' key={item.id}>
+            <div>
+               <span className='flex justify-center items-center text-3xl text-white bg-gradient-to-b from-orange-400 to-orange-500 w-15 h-15 rounded-full'>{item.icon}</span>
+            </div>
+
+            <div>
+               <h3 className='text-zinc-800 text-3xl  font-bold'>{item.title}</h3>
+               <p className='text-zinc-600 mt-2'>{item.para}</p>
+            </div>
+         </div>
+      )
+   })
+
   return (
     <section>
       <div className="max-w-[1400px] mx-auto px-10 py-20">
         <Heading highlight="Our" heading="Value" />
 
-        <div className="flex">
+        <div className="flex md:flex-row flex-col gap-15 md:gap-5 mt-15">
           {/*left Values*/}
-          <div>
+          <div className='md:min-h-100 gap-15 flex flex-col justify-between'>
             {leftValues}
           </div>
-          <div>
-            <img src={Basket} />
+
+          <div className='md:flex w-1/2 hidden '>
+            <img className='h-[400px] w-[400px] rounded-[30px] ml-10 mt-3' src={Basket} alt="Basket" />
           </div>
 
           {/*Right Values*/}
-
-          <div></div>
+          <div className='md:min-h-100 gap-15 flex flex-col justify-between '>
+            {rightValues}
+          </div>
         </div>
       </div>
     </section>
