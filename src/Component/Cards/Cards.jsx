@@ -26,7 +26,7 @@ const Cards = ({ product }) => {
       {/* Product Content */}
       <div className="text-center">
         <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
-        <p className="text-gray-500">${product.price.toFixed(2)}</p>
+        <p className="text-gray-500">₹{product.price.toFixed(2)}</p>
         <button className="mt-3 px-4 py-2 bg-gradient-to-b from-orange-400 to-orange-500 text-white rounded-xl hover:from-orange-500 hover:to-orange-600 transition">
           Shop Now
         </button>
