@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Heading from "../Heading/Heading";
 import ProductList from "../ProductList/ProductList";
 import Cards from "../Cards/Cards";
@@ -40,6 +41,16 @@ const Products = () => {
           {filteredProducts.map((product, index) => (
             <Cards key={index} product={product} />
           ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="flex justify-center mt-10">
+          <Link
+            to="/AllProducts"
+            className="bg-gradient-to-b from-orange-400 to-orange-500 text-white px-8 py-3 rounded-lg md:text-lg text-md hover:scale-105 hover:to-orange-600 transition-all duration-300 cursor-pointer"
+          >
+            View All
+          </Link>
         </div>
       </div>
     </section>

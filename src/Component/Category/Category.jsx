@@ -4,6 +4,34 @@ import Heading from "../Heading/Heading";
 import FruitsCat from "../../assets/FruitsVeggies.jpeg";
 import DairyCat from "../../assets/DairyEggs.jpeg";
 import SeafoodCat from "../../assets/Seafood.jpeg";
+import {Link} from 'react-router-dom'
+// ✅ Moved category array above component
+const category = [
+  {
+    id: 1,
+    title: "Fruits & Veggies",
+    description:
+      "Fresh, organic produce sourced daily from local farms. Explore a wide range of seasonal fruits and crisp vegetables.",
+    image: FruitsCat,
+    path:'/Fruits'
+  },
+  {
+    id: 2,
+    title: "Dairy & Eggs",
+    description:
+      "Wholesome dairy products and free-range eggs. From creamy milk and yogurt to artisanal cheeses.",
+    image: DairyCat,
+    path:'/Dairy'
+  },
+  {
+    id: 3,
+    title: "Meat & SeaFood",
+    description:
+      "High-quality, responsibly sourced meat and seafood. Choose from fresh cuts, marinated options, and more.",
+    image: SeafoodCat,
+    path:'/Seafood'
+  },
+];
 
 const Category = () => {
   const rendercards = category.map((card) => {
@@ -28,7 +56,12 @@ const Category = () => {
             <p className="text-gray-600 text-sm mb-4">{card.description}</p>
           </div>
           <div className="flex justify-center">
-            <Button content="See All" />
+            <Link
+              to={card.path}
+              className="bg-gradient-to-b from-orange-400 to-orange-500 text-white px-8 py-3 rounded-lg md:text-lg text-md hover:scale-105 hover:to-orange-600 transition-all duration-300 cursor-pointer"
+            >
+              See All
+            </Link>
           </div>
         </div>
       </div>
@@ -50,27 +83,3 @@ const Category = () => {
 };
 
 export default Category;
-
-const category = [
-  {
-    id: 1,
-    title: "Fruits & Veggies",
-    description:
-      "Fresh, organic produce sourced daily from local farms. Explore a wide range of seasonal fruits and crisp vegetables.",
-    image: FruitsCat,
-  },
-  {
-    id: 2,
-    title: "Dairy & Eggs",
-    description:
-      "Wholesome dairy products and free-range eggs. From creamy milk and yogurt to artisanal cheeses.",
-    image: DairyCat,
-  },
-  {
-    id: 3,
-    title: "Meat & SeaFood",
-    description:
-      "High-quality, responsibly sourced meat and seafood. Choose from fresh cuts, marinated options, and more.",
-    image: SeafoodCat,
-  },
-];
