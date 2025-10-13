@@ -1,8 +1,14 @@
 import React from 'react'
+import Banner from '../Banner/Banner'
+import CategoryPage from '../CategoryPage/CategoryPage'
+
 
 const Seafood = () => {
   return (
-   <h1> Seafood</h1>
+
+    <div>
+      <CategoryPage />
+    </div>
   )
 }
 
